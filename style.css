@@ -1051,7 +1051,7 @@ h1::before {
 
 .parallax {
   /* The image used */
-  background-image: url("img/baner.jpg");
+  background-image: url("baner.jpg");
   opacity: 0.9;
   /* Set a specific height */
   min-height: 200px;

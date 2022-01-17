@@ -146,6 +146,7 @@ h2 {
 
 .titles {
   display: inline;
+  font-size: 1.2em;
 }
 
 .titles:hover {
@@ -235,7 +236,7 @@ h1::before {
 
 .logo {
   z-index: 2;
-  color: red;
+  color: ;
 }
 
 .nav-list {
@@ -1051,7 +1052,7 @@ h1::before {
 
 .parallax {
   /* The image used */
-  background-image: url("baner.jpg");
+  background-image: url("img/baner.jpg");
   opacity: 0.9;
   /* Set a specific height */
   min-height: 200px;
@@ -1067,11 +1068,11 @@ h1::before {
 .benefits {
   position: relative;
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
-  line-height: 250%;
-  font-size: 1.3em;
-  letter-spacing: 5px;
+  line-height: 150%;
+  font-size: 1.1em;
+  letter-spacing: 2px;
 }
 
 .icons {
@@ -1094,4 +1095,71 @@ body.loaded .fadein {
   text-align: justify;
   text-justify: inter-word;
   orphans: 3;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.client-slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+.client-slider::before,
+.client-slider::after {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(white),
+    to(rgba(255, 255, 255, 0))
+  );
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.client-slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+.client-slider::before {
+  left: 0;
+  top: 0;
+}
+.client-slider .client-slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+  animation: scroll 40s linear infinite;
+  display: -webkit-box;
+  display: flex;
+  width: calc(250px * 14);
+}
+.client-slider .client-slide {
+  height: 100px;
+  width: 250px;
 }
